@@ -1,0 +1,29 @@
+~ $ pulseaudio -D
+E: [pulseaudio] main.c: Daemon startup failed.
+~ $ pulseaudio -start
+pulseaudio: invalid option -- s
+E: [pulseaudio] main.c: Failed to parse command line.
+~ $ pulseaudio --start
+~ $ pulseaudio -D
+E: [pulseaudio] main.c: Daemon startup failed.
+~ $ pulseaudio
+E: [pulseaudio] pid.c: Daemon already running.
+E: [pulseaudio] main.c: pa_pid_file_create() failed.
+~ $ ps aux | grep pulse
+u0_a629  22158  0.0  0.0 11482124 4332 ?       S<l   1970   0:00 /data/data/com.termux/files/usr/bin/pulseaudio --start --log-target=syslog
+u0_a629  28898  0.0  0.0 11148116 2040 pts/1   S<+   1970   0:00 grep pulse
+~ $ pulseaudio -k
+~ $ pulseaudio
+E: [null-sink] util.c: Failed to connect to system bus: Failed to connect to socket /data/data/com.termux/files/usr/var/run/dbus/system_bus_socket: No such file or directory
+E: [null-sink] util.c: Failed to connect to system bus: Failed to connect to socket /data/data/com.termux/files/usr/var/run/dbus/system_bus_socket: No such file or directory
+E: [null-sink] util.c: Failed to connect to system bus: Failed to connect to socket /data/data/com.termux/files/usr/var/run/dbus/system_bus_socket: No such file or directory
+E: [null-sink] util.c: Failed to connect to system bus: Failed to connect to socket /data/data/com.termux/files/usr/var/run/dbus/system_bus_socket: No such file or directory
+E: [null-sink] util.c: Failed to connect to system bus: Failed to connect to socket /data/data/com.termux/files/usr/var/run/dbus/system_bus_socket: No such file or directory
+E: [pulseaudio] module-console-kit.c: Unable to contact D-Bus system bus: org.freedesktop.DBus.Error.FileNotFound: Failed to connect to socket /data/data/com.termux/files/usr/var/run/dbus/system_bus_socket: No such file or directory
+E: [pulseaudio] module.c: Failed to load module "module-console-kit" (argument: ""): initialization failed.
+W: [pulseaudio] cli-command.c: stat('/data/data/com.termux/files/usr/etc/pulse/default.pa.d'): Unknown error 2
+E: [pulseaudio] ltdl-bind-now.c: Failed to open module /data/data/com.termux/files/usr/lib/pulseaudio/modules/module-sles-sink.so: dlopen failed: library "libmediadrmmetrics_lite.so" not found: needed by /system/lib64/libmediadrm.so in namespace (default)
+E: [pulseaudio] module.c: Failed to open module "module-sles-sink".
+W: [pulseaudio] server-lookup.c: Unable to contact D-Bus: org.freedesktop.DBus.Error.NotSupported: Unable to autolaunch a dbus-daemon without a $DISPLAY for X11
+W: [pulseaudio] main.c: Unable to contact D-Bus: org.freedesktop.DBus.Error.NotSupported: Unable to autolaunch a dbus-daemon without a $DISPLAY for X11
+~ $
